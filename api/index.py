@@ -14,7 +14,7 @@ def home():
         'cookies': request.cookies  # Get the user's cookies
     }
     password = request.cookies.get('password')  # Get the password from the user's cookies
-    if password != 'TigerChain':  # Check if the password is correct
+    if password != 'nopassword':  # Check if the password is correct
         return redirect('/password')  # Redirect to the password page if the password is incorrect
     response = make_response(render_template('home.html', user_info=user_info))  # Render the home page with user information
     if 'logout' in request.args:  # Check if the user wants to log out
