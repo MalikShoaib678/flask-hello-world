@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* Add your custom styles for the home page here */
+    </style>
+</head>
+<body>
+    <h3>Welcome to the Web App</h3>
+    <p>User Information:</p>
+    <ul>
+        <li>IP: {{ user_info.ip }}</li>
+        <li>User Agent: {{ user_info.user_agent }}</li>
+        <li>Cookies: {{ user_info.cookies }}</li>
+    </ul>
+    <nav>
+        <a href="{{ url_for('shell') }}">Shell</a>
+        <a href="{{ url_for('camphish') }}">Camphish</a>
+    </nav>
+</body>
+</html>
