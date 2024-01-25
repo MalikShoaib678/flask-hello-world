@@ -25,7 +25,7 @@ def home():
 @app.route('/login', methods=['POST'])  # Define the login route
 def login():
     password = request.form['password']  # Get the password from the form data
-    if password == 'TigerChain':  # Check if the password is correct
+    if password == 'nopassword':  # Check if the password is correct
         response = make_response(redirect('/'))  # Redirect to the home page
         response.set_cookie('password', password)  # Set the password cookie
         return response  # Return the response
@@ -39,7 +39,7 @@ def password():
 @app.route('/shell')  # Define the shell route
 def shell():
     password = request.cookies.get('password')  # Get the password from the user's cookies
-    if password != 'TigerChain':  # Check if the password is correct
+    if password != 'nopassword':  # Check if the password is correct
         return redirect('/password')  # Redirect to the password page if the password is incorrect
     return render_template('shell.html')  # Render the shell interface page
 
