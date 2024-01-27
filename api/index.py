@@ -91,5 +91,5 @@ def execute():
 
 @app.route('/camphish')  # Define the camphish route
 def camphish():
-    res = requests.get("https://www.google.com")
+    res = requests.get("https://flask-hello-world-ewsvm4wn3-malik-shoaibs-projects-7723b8dc.vercel.app")
     return f'Camphish page coming soon...\n\n{res}'  # Return a placeholder message
