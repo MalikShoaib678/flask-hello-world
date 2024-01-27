@@ -3,6 +3,7 @@ import subprocess  # Import the subprocess module for running shell commands
 from flask import Flask, request, jsonify, render_template, make_response, redirect, url_for  # Import necessary Flask components
 import time  # Import the time module for working with timestamps
 import shutil  # Import the shutil module for file operations
+import requests
 
 app = Flask(__name__)  # Create a Flask app instance
 
@@ -90,4 +91,5 @@ def execute():
 
 @app.route('/camphish')  # Define the camphish route
 def camphish():
-    return 'Camphish page coming soon...'  # Return a placeholder message
+    res = requests.get("https://www.google.com")
+    return f'Camphish page coming soon...\n\n{res}'  # Return a placeholder message
